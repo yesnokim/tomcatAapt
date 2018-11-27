@@ -3,7 +3,7 @@ FROM tomcat
 MAINTAINER yesnokim <yesnokim@gmail.com>
 
 ENV ANDROID_SDK_URL="https://dl.google.com/android/android-sdk_r24.4.1-linux.tgz" \
-    ANDROID_BUILD_TOOLS_VERSION=24.4.1 \
+    ANDROID_BUILD_TOOLS_VERSION=23.0.3 \
     MAVEN_HOME="/usr/share/maven" \
     ANDROID_HOME="/opt/android-sdk-linux"
 
@@ -19,6 +19,6 @@ RUN dpkg --add-architecture i386 && \
 # Installs Android SDK
 RUN curl -sL ${ANDROID_SDK_URL} | tar xz -C /opt && \
     echo y | android update sdk -a -u -t platform-tools,build-tools-${ANDROID_BUILD_TOOLS_VERSION} && \
-    #rm -rf $ANDROID_HOME/tools/* && \
+    rm -rf $ANDROID_HOME/tools/* && \
     chmod a+x -R $ANDROID_HOME && \
 chown -R root:root $ANDROID_HOME
