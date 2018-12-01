@@ -1,0 +1,6 @@
+tomcatAapt:
+image: 49ea1fefbed4
+ports:
+  - "8888:8080:
+volumes:
+  - ./:/usr/local/tomcat/webapps
