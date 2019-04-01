@@ -15,9 +15,6 @@ RUN dpkg --add-architecture i386 && \
     apt-get autoremove -y && \
     apt-get clean && \
     rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
-    
-RUN wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb && \
-    apt-get install ./google-chrome-stable_current_amd64.deb
 
 # Installs Android SDK
 RUN curl -sL ${ANDROID_SDK_URL} | tar xz -C /opt && \
