@@ -1,4 +1,4 @@
-FROM tomcat:8.5.35-jre10
+FROM tomcat:8.5.35-jre11
 
 MAINTAINER yesnokim <yesnokim@gmail.com>
 
